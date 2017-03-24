@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Slim 3</title>
+    <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 50px 0 0 0;
+            padding: 0;
+            width: 100%;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-align: center;
+            color: #aaa;
+            font-size: 18px;
+        }
+
+        h1 {
+            color: #db3c22;
+            letter-spacing: -3px;
+            font-family: 'Lato', sans-serif;
+            font-size: 100px;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+        .contenedor{
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .cont_left{
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .cont_rigth{
+            width: 15%;
+
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+        input{
+            padding: 8px;
+            font-size: 12px;
+
+        }
+
+    </style>
+</head>
+<body>
+<h1>DEVELOPERS SAC</h1>
+<div>Detalle de Empleado <a href="../allEmployes"> << Atras </a></div>
+<br>
+
+<div class="contenedor">
+
+    <div class="cont_left">
+
+        <form action="">
+            <label for="">Name</label><br>
+            <input type="text" value="<?= $emp['name'] ?>" disabled><br>
+            <label for="">Emai</label><br>
+            <input type="text" value="<?= $emp['email'] ?>" disabled><br>
+            <label for="">Phone</label><br>
+            <input type="text" value="<?= $emp['phone'] ?>" disabled><br>
+            <label for="" >Address</label><br>
+            <input type="text" value="<?= $emp['address'] ?>" disabled><br>
+            <label for="">Position</label><br>
+            <input type="text" value="<?= $emp['position'] ?>" disabled><br>
+            <label for="">Salary</label><br>
+            <input type="text" value="<?= $emp['salary'] ?>" disabled><br>
+        </form>
+
+    </div>
+
+    <div class="cont_rigth">
+        <h3>Skills</h3>
+        <ul>
+            <?php foreach ($emp['skills'] as $item){
+                ?>
+                <li><?= $item['skill']?></li>
+            <?php }?>
+
+        </ul>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
